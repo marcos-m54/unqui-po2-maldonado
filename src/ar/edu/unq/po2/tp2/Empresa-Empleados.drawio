@@ -1,0 +1,139 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0" version="28.2.0">
+  <diagram name="Página-1" id="key1WaKdzga0If_RQwYc">
+    <mxGraphModel dx="2072" dy="2311" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="NPIAi-LU4git0FQE2DkM-1" value="Empresa&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="25" y="-740" width="274" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-2" value="- nombre : String&lt;div&gt;- cuit : String&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-1">
+          <mxGeometry y="26" width="274" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-1">
+          <mxGeometry y="70" width="274" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-4" value="&lt;div&gt;+ new(String, String)&lt;/div&gt;+ montoTotalSueldosNeto(): Float&lt;div&gt;+ montoTotalSueldosBruto(): Float&lt;/div&gt;&lt;div&gt;+ montoTotalRetenciones(): Float&lt;/div&gt;&lt;div&gt;+ liquidacionDeHaberes(): Void&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-1">
+          <mxGeometry y="78" width="274" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-5" value="&lt;i&gt;Empleado&lt;/i&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="485" y="-720" width="270" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-12" value="# nombre: String&lt;div&gt;# direccion: String&lt;/div&gt;&lt;div&gt;# estadoCivil: String&lt;/div&gt;&lt;div&gt;# fechaNac: Date&lt;/div&gt;&lt;div&gt;# sueldoBasico: Float&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-5">
+          <mxGeometry y="26" width="270" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-5">
+          <mxGeometry y="120" width="270" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-8" value="&lt;div&gt;&lt;i&gt;+ new(String, String, String, Date, Float)&lt;/i&gt;&lt;/div&gt;&lt;i&gt;+ &lt;/i&gt;edad(): Integer&lt;div&gt;+ nuevoReciboHaber(): Void&lt;/div&gt;&lt;div&gt;+ liquidacion(): Void&lt;br&gt;&lt;div&gt;&lt;i&gt;+ sueldoBruto(): Float&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;+ retenciones(): Float&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;+ sueldoNeto(): Float&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-5">
+          <mxGeometry y="128" width="270" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-13" value="ReciboHaber" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="25" y="-450" width="240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-14" value="- nombreEmpleado: String&lt;div&gt;- direccion: String&lt;/div&gt;&lt;div&gt;- fechaEmision: Date&lt;/div&gt;&lt;div&gt;- sueldoBruto: Float&lt;/div&gt;&lt;div&gt;- sueldoNeto: Float&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-13">
+          <mxGeometry y="26" width="240" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-13">
+          <mxGeometry y="130" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-16" value="&lt;div&gt;+ new(String, String, Date, Float, Float)&lt;/div&gt;+ conceptos(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-13">
+          <mxGeometry y="138" width="240" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-19" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;entryX=0.011;entryY=0.585;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="NPIAi-LU4git0FQE2DkM-2" target="NPIAi-LU4git0FQE2DkM-12">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="355" y="-44" as="sourcePoint" />
+            <mxPoint x="525" y="-370" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-20" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="NPIAi-LU4git0FQE2DkM-19">
+          <mxGeometry x="-1" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-22" value="empleados" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="330" y="-720" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-29" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.068;entryY=1.058;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.533;exitY=-0.006;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="NPIAi-LU4git0FQE2DkM-59" target="NPIAi-LU4git0FQE2DkM-8">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="325" y="-220" as="sourcePoint" />
+            <mxPoint x="430" y="-300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-30" value="EmpleadoTemporal" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="542" y="-1085" width="260" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-31" value="- fechaFinDesignacion: Date&lt;div&gt;- cantHorasExtras: Integer&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-30">
+          <mxGeometry y="26" width="260" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-32" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-30">
+          <mxGeometry y="70" width="260" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-33" value="&lt;div&gt;+ new(String, String, String , Date, Float, Date, Integer)&lt;/div&gt;&lt;div&gt;&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;+ montoPorHorasExtras(): Float&lt;div&gt;+ montoPorObraSocial(): Float&lt;/div&gt;&lt;div&gt;+ montoAportes(): Float&lt;/div&gt;&lt;div&gt;+ montoPorHorasExtrasRetenciones(): Float&lt;/div&gt;&lt;div&gt;&lt;div&gt;+ sueldoBruto(): Float&lt;/div&gt;&lt;div&gt;+ retenciones(): Float&lt;/div&gt;&lt;div&gt;+ sueldoNeto(): Float&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-30">
+          <mxGeometry y="78" width="260" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-34" value="recibos" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="295" y="-550" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-35" value="*" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="445" y="-660" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-42" value="*" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="115" y="-490" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-44" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.541;exitY=1.01;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="NPIAi-LU4git0FQE2DkM-33">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="485" y="-209" as="sourcePoint" />
+            <mxPoint x="685" y="-720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-45" value="EmpleadoPermanente" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="205" y="-1110" width="270" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-46" value="- cantHijos: Integer&lt;div&gt;- antiguedad: Integer&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-45">
+          <mxGeometry y="26" width="270" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-47" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-45">
+          <mxGeometry y="70" width="270" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-48" value="&lt;div&gt;&lt;div&gt;+ new(String, String, String, Date, Float, Integer, Integer)&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/div&gt;+ montoSalarioFamiliar(): Float&lt;div&gt;+ montoAsignacionPorHijo(): Float&lt;/div&gt;&lt;div&gt;+ montoAsignacionPorConyuge(): Float&lt;/div&gt;&lt;div&gt;+ montoPorAntiguedad(): Float&lt;/div&gt;&lt;div&gt;+ montoPorObraSocial(): Float&lt;/div&gt;&lt;div&gt;+ montoAportes(): Float&lt;/div&gt;&lt;div&gt;&lt;div&gt;+ sueldoBruto(): Float&lt;/div&gt;&lt;div&gt;+ retenciones(): Float&lt;/div&gt;&lt;div&gt;+ sueldoNeto(): Float&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-45">
+          <mxGeometry y="78" width="270" height="222" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-49" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.551;exitY=1.002;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="NPIAi-LU4git0FQE2DkM-48" target="NPIAi-LU4git0FQE2DkM-5">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="495" y="-274" as="sourcePoint" />
+            <mxPoint x="415" y="-790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-59" value="EmpleadoContratado" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="355" y="-406" width="270" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-60" value="- numeroDeContrato: Integer&lt;div&gt;- medioDePago: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-59">
+          <mxGeometry y="26" width="270" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-61" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-59">
+          <mxGeometry y="70" width="270" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-62" value="+ new(String, String, String , Date, Float, Integer, String)&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;+ sueldoBruto(): Float&lt;/div&gt;&lt;div&gt;+ retenciones(): Float&lt;/div&gt;&lt;div&gt;+ sueldoNeto(): Float&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="NPIAi-LU4git0FQE2DkM-59">
+          <mxGeometry y="78" width="270" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-73" value="" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.005;exitY=0.996;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="NPIAi-LU4git0FQE2DkM-12" target="NPIAi-LU4git0FQE2DkM-13">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="335" y="-510" as="sourcePoint" />
+            <mxPoint x="524" y="-457" as="targetPoint" />
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="425" y="-600" />
+              <mxPoint x="425" y="-525" />
+              <mxPoint x="145" y="-525" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NPIAi-LU4git0FQE2DkM-74" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="NPIAi-LU4git0FQE2DkM-73">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-26" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
