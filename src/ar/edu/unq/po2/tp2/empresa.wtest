@@ -1,0 +1,15 @@
+import empresa.*
+import empleado.*
+import recibo.*
+
+describe "test de empresa"{
+
+    const pedro = new EmpleadoTemporario(nombre = "pedro", direccion = "calle falsa 123", estadoCivil = "casado", fechaNac = new Date(day = 30, month = 6, year = 1973), sueldoBasico = 100, fechaFinDesignacion = new Date(day = 30, month = 6, year = 2030), cantidadHorasExtras = 10, tieneMasDe50AñosAporte = false,recibos = [], dineroEnCuenta= 0)
+    //const camila = new EmpleadoPermanente()
+    //const luis = new EmpleadoContratado()
+   // const unqEmp = new Empresa(nombre="unq", cuit = "222222222", empleados = #{pedro})
+
+    test "unTest"{
+       // assert.equals(500, pedro.sueldoBruto())
+    }
+}
