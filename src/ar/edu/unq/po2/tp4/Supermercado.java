@@ -1,12 +1,34 @@
 package ar.edu.unq.po2.tp4;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Supermercado {
 	private String nombre;
 	private String direccion;
-	private ArrayList<Producto> productos;
+	private List<Producto> productos = new ArrayList<Producto>();
 	
+	
+	public Supermercado(String nombre, String direccion) {
+		this.nombre = nombre;
+		this.direccion = direccion;
+	}
+	
+	public int getCantidadDeProductos() {
+		return productos.size();
+	}
+	
+	public void agregarProducto(Producto unProducto) {
+		productos.add(unProducto);
+		
+	}
+	
+	public double getPrecioTotal() {
+		return productos.stream()
+						.mapToDouble(empleado -> empleado.getPrecio())
+						.sum();
+	}
+
 	
 	
 	public String getNombre() {
@@ -25,28 +47,17 @@ public class Supermercado {
 		this.direccion = direccion;
 	}
 
-	public ArrayList<Producto> getProductos() {
+	public List<Producto> getProductos() {
 		return productos;
 	}
 
-	public void setProductos(ArrayList<Producto> productos) {
+	public void setProductos(List<Producto> productos) {
 		this.productos = productos;
 	}
+	
+	
+	
 
-	public Supermercado(String nombre, String direccion) {
-		this.nombre = nombre;
-		this.direccion = direccion;
-	}
 	
-	public int getCantidadDeProductos() {
-		return productos.size();
-	}
-	
-	public void agregarProducto(ArrayList<Producto> unProducto) {
-		return productos.add(unProducto);
-	}
-	
-	public double getPrecioTotal() {
-		return productos.stream().mapToDouble(empleado -> empleado.getPrecio()).sum();
-	}
+
 }
