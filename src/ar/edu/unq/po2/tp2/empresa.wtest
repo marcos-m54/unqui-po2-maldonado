@@ -4,12 +4,85 @@ import recibo.*
 
 describe "test de empresa"{
 
-    const pedro = new EmpleadoTemporario(nombre = "pedro", direccion = "calle falsa 123", estadoCivil = "casado", fechaNac = new Date(day = 30, month = 6, year = 1973), sueldoBasico = 100, fechaFinDesignacion = new Date(day = 30, month = 6, year = 2030), cantidadHorasExtras = 10, tieneMasDe50AñosAporte = false,recibos = [], dineroEnCuenta= 0)
-    //const camila = new EmpleadoPermanente()
-    //const luis = new EmpleadoContratado()
-   // const unqEmp = new Empresa(nombre="unq", cuit = "222222222", empleados = #{pedro})
+    //Empleados
 
-    test "unTest"{
-       // assert.equals(500, pedro.sueldoBruto())
+    const pedro = new EmpleadoTemporario(nombre = "pedro", direccion = "Saavedra 123", estadoCivil = "casado", fechaNac = new Date(day = 30, month = 6, year = 1973), sueldoBasico = 100, fechaFinDesignacion = new Date(day = 30, month = 6, year = 2030), cantidadHorasExtras = 10, tieneMasDe50AñosAporte = false, dineroEnCuenta= 0)
+    const camila = new EmpleadoPermanente(nombre="Camila",direccion="santamarina 422",cantHijos=3,antiguedad=2,estadoCivil = "soltera", fechaNac = new Date(day = 2, month = 6, year = 1972),sueldoBasico=200,dineroEnCuenta=0)
+    const luis = new EmpleadoContratado(nombre= "luis", direccion="padre milano 234", estadoCivil="casado",fechaNac = new Date(day = 23, month = 1, year = 1994), sueldoBasico=150,numeroDeContrato=23,medioDePago="Cheque",dineroEnCuenta=0)
+   
+   //Empresa
+
+    const unqEmp = new Empresa(nombre="unq", cuit = "222222222", empleados = #{pedro,camila,luis})
+
+    test "Empleado temporario sueldo bruto"{
+       assert.equals(100, pedro.sueldoBasico())
+       assert.equals(400, pedro.montoPorHorasExtras())
+       assert.equals(500, pedro.sueldoBruto())
+    }
+
+    test "Empleado temporario retenciones"{
+        assert.equals(50, pedro.montoPorObraSocial())
+        assert.notThat(pedro.tieneMasDe50AñosAporte())
+        assert.equals(75, pedro.retenciones())
+    }
+
+    test "Empleado temporario sueldo neto"{
+        assert.equals(425, pedro.sueldoNeto())
+    }
+
+
+    test "Empleado Permanente sueldo bruto"{
+       assert.equals(200, camila.sueldoBasico())
+       assert.equals(450, camila.montoAsignacionPorHijo())
+
+       assert.notThat(camila.tieneConyuge())
+       assert.equals(0, camila.montoAsignacionPorConyuge())
+       
+       assert.equals(100, camila.montoPorAntiguedad())
+       assert.equals(750, camila.sueldoBruto())
+    }
+    test "Empleado permanente retenciones"{
+        assert.equals(135, camila.montoPorObraSocial())
+        assert.equals(112.5, camila.montoAportes())
+        assert.equals(247.5, camila.retenciones())
+    }
+
+
+    test "Empleado permanente sueldo neto"{
+        assert.equals(502.5, camila.sueldoNeto())
+    }
+
+    test "Empleado contratado sueldo bruto"{
+        assert.equals(150, luis.sueldoBruto())
+    }
+    test "Empleado contratado retenciones"{
+        assert.equals(50, luis.retenciones())
+    }
+
+
+    test "Empleado contratado sueldo neto"{
+        assert.equals(100, luis.sueldoNeto())
+    }
+
+
+    test "Empresa unq"{
+
+        assert.equals(1400, unqEmp.montoTotalSueldosBrutos())
+        assert.equals(1027.5,unqEmp.montoTotalSueldosNetos())
+        assert.equals(372.5, unqEmp.montoTotalRetenciones())
+    }
+
+    test "Liquidacion"{
+
+        assert.equals(0, pedro.dineroEnCuenta())
+        assert.equals(0, camila.dineroEnCuenta())
+        assert.equals(0, luis.dineroEnCuenta())
+        
+        unqEmp.pagoDeHaberes()
+
+        assert.equals(425, pedro.dineroEnCuenta())
+        assert.equals(502.5, camila.dineroEnCuenta())
+        assert.equals(100, luis.dineroEnCuenta())
+
     }
 }

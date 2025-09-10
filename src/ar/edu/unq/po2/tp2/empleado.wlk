@@ -8,7 +8,7 @@ class Empleado{
     var property estadoCivil
     var property fechaNac
     var property sueldoBasico
-    var property recibos
+    var property recibos = #{}
     var property dineroEnCuenta
 
     method edad(){
@@ -104,7 +104,7 @@ class EmpleadoTemporario inherits Empleado{
     }
 
     method montoAportes(){
-        return if (self.tieneMasDe50AñosAporte()) (self.sueldoBruto() * 0.1 ) + (5 * cantidadHorasExtras) + 25 else  25
+        return if (self.tieneMasDe50AñosAporte()) (self.sueldoBruto() * 0.1 ) + (5 * cantidadHorasExtras) + 25 else 25
     }
 
     method montoPorObraSocial(){

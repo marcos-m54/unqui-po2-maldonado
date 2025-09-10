@@ -6,11 +6,11 @@ class Empresa{
     var property cuit
     var property empleados
 
-    method montoTotalSueldosNeto(){
+    method montoTotalSueldosNetos(){
         return empleados.sum{empleado => empleado.sueldoNeto()}
     }
     
-    method montoTotalSueldosBruto(){
+    method montoTotalSueldosBrutos(){
         return empleados.sum{empleado => empleado.sueldoBruto()}
     }
 
@@ -18,7 +18,7 @@ class Empresa{
         return empleados.sum{empleado => empleado.retenciones()}
     }
 
-    method liquidacionDeHaberes(){
+    method pagoDeHaberes(){
         empleados.forEach{empleado => empleado.liquidacion()}
     }
 
