@@ -25,7 +25,7 @@ public class Supermercado {
 	
 	public double getPrecioTotal() {
 		return productos.stream()
-						.mapToDouble(empleado -> empleado.getPrecio())
+						.mapToDouble(producto -> producto.getPrecio())
 						.sum();
 	}
 
