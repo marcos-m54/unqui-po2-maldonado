@@ -11,11 +11,15 @@ public class Empleado {
 	}
 	
 	public Double getTotalPercibido() {
-		return ingresos.stream().mapToDouble(ingreso -> ingreso.getMontoPercibido()).sum();	
+		return ingresos.stream()
+					   .mapToDouble(ingreso -> ingreso.getMontoPercibido())
+					   .sum();	
 	}
 	
 	public Double getMontoImponible() {
-		return ingresos.stream().mapToDouble(ingreso -> ingreso.getMontoImponible()).sum();
+		return ingresos.stream()
+					   .mapToDouble(ingreso -> ingreso.getMontoImponible())
+					   .sum();
 	}
 	
 	public Double getImpuestoAPagar() {
