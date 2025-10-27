@@ -3,6 +3,30 @@ package ar.edu.unq.po2.doubles;
 import java.util.ArrayList;
 import java.util.List;
 
+public class PokerStatus{
+	
+	private List<Naipe> naipes = new ArrayList<Naipe>();
+	
+	public void agregarNaipe(Naipe unNaipe) {
+		if (naipes.size() < 6) {
+			naipes.add(unNaipe);
+		}
+	}
+	
+	
+	
+	public String verificar() {
+		
+	}
+	
+	public boolean esPoker() {
+		return naipes.stream().
+	}
+	
+	
+}
+
+/*
 public class PokerStatus {
 
 	public String verificar(String carta1, String carta2, String carta3, String carta4, String carta5) {
@@ -74,3 +98,4 @@ public class PokerStatus {
 	}
 
 }
+*/
