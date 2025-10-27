@@ -1,7 +1,7 @@
 package ar.edu.unq.po2.doubles;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+//import static org.junit.Assert.assertFalse;
+//import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -47,22 +47,31 @@ public class PokerStatusTest {
 		}
 	
 	
-	
+	@Test
+	public void deberiaDetectarTrio() {
+		assertEquals("Trio", mano.verificar("7P","9C","9D","9T","QT"));
+		assertEquals("Trio", mano.verificar("1P","QC","QD","9T","QT"));
+		assertEquals("Trio", mano.verificar("10C","10T","9D","9T","10Q"));
+		assertEquals("Trio", mano.verificar("7P","6C","6D","9T","6T"));
+	}
 	
 	@Test
 	public void DeberiaDetectcarPoker() {
-		assertTrue(mano.verificar("4P","4C","4D","4T","5T"));
-		assertTrue(mano.verificar("4P","6C","6D","6T","6T"));		
-		assertTrue(mano.verificar("10P","10C","10D","4T","10T"));
-		assertTrue(mano.verificar("5T","QP", "QC", "QD", "QT"));
-		assertTrue(mano.verificar("5T","JP","JC","JD","JT")); 
+		assertEquals("Poker", mano.verificar("4P","4C","4D","4T","5T"));
+		assertEquals("Poker", mano.verificar("4P","6C","6D","6T","6T"));		
+		assertEquals("Poker", mano.verificar("10P","10C","10D","4T","10T"));
+		assertEquals("Poker", mano.verificar("5T","QP", "QC", "QD", "QT"));
+		assertEquals("Poker", mano.verificar("5T","JP","JC","JD","JT")); 
 																	  
 	}
 	
+		
 	@Test
-	public void DeberiaDetectarQueNOesPoker() {
-		assertFalse(mano.verificar("2P","4C","JD","JT","5T"));
-		assertFalse(mano.verificar("QP","KC","2D","6T","5T"));
+	public void deberiaDetectarColor() {
+		assertEquals("Color", mano.verificar("1P","3P","QP","KP","JP"));
+		assertEquals("Color", mano.verificar("1C","3C","QC","KC","JC"));
+		assertEquals("Color", mano.verificar("1T","3T","QT","KT","JT"));
 	}
- 
+
+	
 }
