@@ -77,7 +77,7 @@ public class PokerStatusTest {
 	public void setUp() {
 		
 		mano = new PokerStatus();
-		
+				
 		diamante = Palo.DIAMANTE;
 		corazon  = Palo.CORAZON;
 		pica	 = Palo.PICA;
@@ -207,28 +207,95 @@ public class PokerStatusTest {
 	
 	@Test
 	public void deberiaDetectarTrio() {
-		assertEquals("Trio", mano.verificar(sieteDePica,nueveDeCorazon,nueveDeDiamante,nueveDeTrebol,queenDeTrebol));
-		assertEquals("Trio", mano.verificar(unoDePica,queenDeCorazon,queenDeDiamante,nueveDeTrebol,queenDeTrebol));
-		assertEquals("Trio", mano.verificar(diezDeCorazon,diezDeTrebol,nueveDeDiamante,nueveDeTrebol,diezDePica));
-		assertEquals("Trio", mano.verificar(sieteDePica,seisDeCorazon,seisDeDiamante,nueveDeTrebol,seisDeTrebol));
+		
+		mano.agregarNaipe(sieteDePica);
+		mano.agregarNaipe(nueveDeCorazon);
+		mano.agregarNaipe(nueveDeDiamante);
+		mano.agregarNaipe(nueveDeTrebol);
+		mano.agregarNaipe(queenDeTrebol);
+		
+		
+		assertEquals("Trio", mano.verificar());
+		mano.vaciarMano();
+		
+		mano.agregarNaipe(unoDePica);
+		mano.agregarNaipe(queenDeCorazon);
+		mano.agregarNaipe(queenDeDiamante);
+		mano.agregarNaipe(nueveDeTrebol);
+		mano.agregarNaipe(queenDeTrebol);
+		
+		assertEquals("Trio", mano.verificar());
 	}
 	
 	@Test
 	public void DeberiaDetectcarPoker() {
-		assertEquals("Poker", mano.verificar(cuatroDePica,cuatroDeCorazon,cuatroDeDiamante,cuatroDeTrebol,cincoDeTrebol));
-		assertEquals("Poker", mano.verificar(cuatroDePica,seisDeCorazon,seisDeDiamante,seisDeTrebol,seisDePica));		
-		assertEquals("Poker", mano.verificar(diezDePica,diezDeCorazon,diezDeDiamante,cuatroDeTrebol,diezDeTrebol));
-		assertEquals("Poker", mano.verificar(cincoDeTrebol,queenDePica, queenDeCorazon, queenDeDiamante, queenDeTrebol));
-		assertEquals("Poker", mano.verificar(cincoDeTrebol,jackDePica,jackDeCorazon,jackDeDiamante,jackDeTrebol)); 
-																	  
+		
+		mano.agregarNaipe(cuatroDePica);
+		mano.agregarNaipe(cuatroDeCorazon);
+		mano.agregarNaipe(cuatroDeDiamante);
+		mano.agregarNaipe(cuatroDeTrebol);
+		mano.agregarNaipe(cincoDeTrebol);
+		
+		
+		assertEquals("Poker", mano.verificar());
+		mano.vaciarMano();
+		
+		mano.agregarNaipe(cuatroDePica);
+		mano.agregarNaipe(seisDeCorazon);
+		mano.agregarNaipe(seisDeDiamante);
+		mano.agregarNaipe(seisDeTrebol);
+		mano.agregarNaipe(seisDePica);
+		
+		assertEquals("Poker", mano.verificar());
+												  
 	}
 	
 		
 	@Test
 	public void deberiaDetectarColor() {
-		assertEquals("Color", mano.verificar(unoDePica,tresDePica,queenDePica,kingDePica,jackDePica));
-		assertEquals("Color", mano.verificar(unoDeCorazon,tresDeCorazon,queenDeCorazon,kingDeCorazon,jackDeCorazon));
-		assertEquals("Color", mano.verificar(unoDeTrebol,tresDeTrebol,queenDeTrebol,kingDeTrebol,jackDeTrebol));
+		
+		mano.agregarNaipe(unoDePica);
+		mano.agregarNaipe(tresDePica);
+		mano.agregarNaipe(queenDePica);
+		mano.agregarNaipe(kingDePica);
+		mano.agregarNaipe(jackDePica);
+		
+		
+		assertEquals("COLOR", mano.verificar());
+		mano.vaciarMano();
+		
+		mano.agregarNaipe(unoDeCorazon);
+		mano.agregarNaipe(tresDeCorazon);
+		mano.agregarNaipe(queenDeCorazon);
+		mano.agregarNaipe(seisDeCorazon);
+		mano.agregarNaipe(dosDeCorazon);
+		
+		assertEquals("COLOR", mano.verificar());
+		
+
+	}
+	
+	@Test
+	public void deberiaDetectarQueNoHayNingunJuego() {
+		
+		mano.agregarNaipe(cincoDeCorazon);
+		mano.agregarNaipe(seisDeCorazon);
+		mano.agregarNaipe(sieteDeCorazon);
+		mano.agregarNaipe(unoDePica);
+		mano.agregarNaipe(dosDePica);
+		
+		assertEquals("", mano.verificar());
+		mano.vaciarMano();
+		
+		mano.agregarNaipe(tresDeDiamante);
+		mano.agregarNaipe(cincoDePica);
+		mano.agregarNaipe(sieteDeCorazon);
+		mano.agregarNaipe(cuatroDeTrebol);
+		mano.agregarNaipe(queenDePica);
+		
+		assertEquals("", mano.verificar());
+		
+		
 	}
 
 	

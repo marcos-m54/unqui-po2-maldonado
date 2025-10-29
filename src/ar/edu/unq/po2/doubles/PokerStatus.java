@@ -1,7 +1,9 @@
 package ar.edu.unq.po2.doubles;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PokerStatus{
 	
@@ -13,16 +15,40 @@ public class PokerStatus{
 		}
 	}
 	
+	public void vaciarMano() {
+		naipes.clear();
+	}
 	
 	
 	public String verificar() {
 		
-	}
+        Map<Integer, Integer> conteoCartas = new HashMap<>();
+        
+        conteoCartas.put(naipes.get(0).getValor(), conteoCartas.getOrDefault(naipes.get(0).getValor(), 0) + 1);
+        conteoCartas.put(naipes.get(1).getValor(), conteoCartas.getOrDefault(naipes.get(1).getValor(), 0) + 1);
+        conteoCartas.put(naipes.get(2).getValor(), conteoCartas.getOrDefault(naipes.get(2).getValor(), 0) + 1);
+        conteoCartas.put(naipes.get(3).getValor(), conteoCartas.getOrDefault(naipes.get(3).getValor(), 0) + 1);
+        conteoCartas.put(naipes.get(4).getValor(), conteoCartas.getOrDefault(naipes.get(4).getValor(), 0) + 1);
+             
+        for (Integer count : conteoCartas.values()) {
+            if (count == 4) {
+                return "Poker";
+            } else if (count == 3) {
+                return "Trio";
+            }
+        }
+        
+        
+        if(naipes.stream().allMatch(naipe -> naipe.getPalo().equals(Palo.DIAMANTE)) ||
+           naipes.stream().allMatch(naipe -> naipe.getPalo().equals(Palo.PICA))     ||
+           naipes.stream().allMatch(naipe -> naipe.getPalo().equals(Palo.TREBOL))   ||
+           naipes.stream().allMatch(naipe -> naipe.getPalo().equals(Palo.CORAZON)) )   return "COLOR";
+        
 	
-	public boolean esPoker() {
-		return naipes.stream().
-	}
-	
+        
+		
+		return "";
+	}	
 	
 }
 

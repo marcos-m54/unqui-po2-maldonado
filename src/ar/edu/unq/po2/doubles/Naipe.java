@@ -3,7 +3,7 @@ package ar.edu.unq.po2.doubles;
 public class Naipe {
 
 	private Palo palo;
-	private int valor;
+	private Integer valor;
 	
 	public Naipe(Palo palo, int valor) {
 		super();
