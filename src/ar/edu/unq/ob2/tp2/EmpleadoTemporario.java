@@ -3,6 +3,7 @@ package ar.edu.unq.ob2.tp2;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.Period;
 
 public class EmpleadoTemporario extends Empleado{
 	
@@ -54,7 +55,10 @@ public class EmpleadoTemporario extends Empleado{
 	}
 	
 	public int edad() {
-		return 25; //TODO
+		
+		Period periodoEdad = Period.between(getFechaDeNacimiento(), LocalDate.now());
+		
+		return periodoEdad.getYears();
 	}
 	
 	public Double montoSiSupera50() {
