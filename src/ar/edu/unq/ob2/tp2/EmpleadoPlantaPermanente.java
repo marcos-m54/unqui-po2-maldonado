@@ -1,6 +1,7 @@
 package ar.edu.unq.ob2.tp2;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EmpleadoPlantaPermanente extends Empleado{
@@ -8,8 +9,8 @@ public class EmpleadoPlantaPermanente extends Empleado{
 	private int cantidadDeHijos;
 	private int antiguedad;
 	
-	public EmpleadoPlantaPermanente(String nombre, String direccion, String estadoCivil, Date fechaDeNacimiento,
-			int sueldoBasico, List<ReciboHaberes> recibos, int cantidadDeHijos, int antiguedad) {
+	public EmpleadoPlantaPermanente(String nombre, String direccion, String estadoCivil, LocalDate fechaDeNacimiento,
+			Double sueldoBasico, List<ReciboHaberes> recibos, Integer cantidadDeHijos, Integer antiguedad) {
 			super(nombre, direccion, estadoCivil, fechaDeNacimiento, sueldoBasico, recibos);
 			this.setCantidadDeHijos(cantidadDeHijos);
 			this.setAntiguedad(antiguedad);
@@ -54,7 +55,7 @@ public class EmpleadoPlantaPermanente extends Empleado{
 	}
 	
 	public Double salarioFamiliar() {
-		return this.asignacionPorHijo() + this.beneficioConyuge() + this.antiguedad();
+		return this.asignacionPorHijo() + this.beneficioConyuge() + this.montoAntiguedad();
 	}
 	
 	public Double asignacionPorHijo() {
@@ -69,12 +70,34 @@ public class EmpleadoPlantaPermanente extends Empleado{
 		}
 	}
 	
-	public Double antiguedad() {
+	public Double montoAntiguedad() {
 		return (double) (this.getAntiguedad() * 50);
 	}
 	
 	public Double aporteJubilatorio() {
 		return 0.15 * this.sueldoBruto();
+	}
+	
+	@Override
+	public List<Concepto> generarConceptos() {
+		
+		List<Concepto> conceptos = new ArrayList<Concepto>();
+		
+		conceptos.add(new Concepto("Sueldo Bruto", this.sueldoBruto()));
+		conceptos.add(new Concepto("Sueldo Basico", this.getSueldoBasico()));
+		conceptos.add(new Concepto("Salario Familiar", this.salarioFamiliar()));
+		
+		conceptos.add(new Concepto("Asignacion por hijo", this.asignacionPorHijo()));
+		conceptos.add(new Concepto("Asignacion por conyuge", this.beneficioConyuge()));
+
+		conceptos.add(new Concepto("Retenciones", this.retenciones()));
+		conceptos.add(new Concepto("Monto por obra social", this.costoObraSocial()));
+		conceptos.add(new Concepto("Monto por aportes jubilatorios", this.aporteJubilatorio()));
+		
+		conceptos.add(new Concepto("Sueldo Neto", this.sueldoNeto()));
+		
+		
+		return conceptos;
 	}
 
 }

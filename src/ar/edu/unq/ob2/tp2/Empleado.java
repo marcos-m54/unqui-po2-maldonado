@@ -1,7 +1,7 @@
 package ar.edu.unq.ob2.tp2;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public abstract class Empleado {
@@ -9,11 +9,11 @@ public abstract class Empleado {
 	private String nombre;
 	private String direccion;
 	private String estadoCivil;
-	private Date fechaDeNacimiento;
-	private int sueldoBasico;
+	private LocalDate fechaDeNacimiento;
+	private Double sueldoBasico;
 	private List<ReciboHaberes> recibos = new ArrayList<ReciboHaberes>(); 
 	
-	public Empleado(String nombre, String direccion, String estadoCivil, Date fechaDeNacimiento, int sueldoBasico,
+	public Empleado(String nombre, String direccion, String estadoCivil, LocalDate fechaDeNacimiento, Double sueldoBasico,
 			List<ReciboHaberes> recibos) {
 		super();
 		this.nombre = nombre;
@@ -48,19 +48,19 @@ public abstract class Empleado {
 		this.estadoCivil = estadoCivil;
 	}
 
-	public Date getFechaDeNacimiento() {
+	public LocalDate getFechaDeNacimiento() {
 		return fechaDeNacimiento;
 	}
 
-	public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+	public void setFechaDeNacimiento(LocalDate fechaDeNacimiento) {
 		this.fechaDeNacimiento = fechaDeNacimiento;
 	}
 
-	public int getSueldoBasico() {
+	public Double getSueldoBasico() {
 		return sueldoBasico;
 	}
 
-	public void setSueldoBasico(int sueldoBasico) {
+	public void setSueldoBasico(Double sueldoBasico) {
 		this.sueldoBasico = sueldoBasico;
 	}
 
@@ -72,16 +72,16 @@ public abstract class Empleado {
 		this.recibos = recibos;
 	}
 
-
+	public void generarRecibo() {
+		recibos.add(new ReciboHaberes(this.getNombre(), this.getDireccion(), LocalDate.now(), this.sueldoBruto(), this.sueldoNeto(), this.generarConceptos()));
+	}
 	
+	public abstract List<Concepto> generarConceptos();
 	public abstract Double sueldoBruto();
 	public abstract Double retenciones();
 	public abstract Double costoObraSocial();
 	public abstract Double sueldoNeto();
+	public abstract Double aporteJubilatorio();
 	
-	
-	
-	
-	
-	
+
 }
