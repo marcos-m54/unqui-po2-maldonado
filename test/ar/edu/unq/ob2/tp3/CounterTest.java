@@ -42,5 +42,11 @@ class CounterTest {
 	void testDivisibility() {
 		//TODO
 	}
-
+	@Test //yay fallo
+	void testCantidadDeDigitosPares() {
+		assertEquals(counter.cantidadDigitosPares(22), 2);
+		assertEquals(counter.cantidadDigitosPares(4789), 3);
+		assertEquals(counter.cantidadDigitosPares(888888888), 9);
+		//deberia fallar el ultimo e.e 
+		}
 }

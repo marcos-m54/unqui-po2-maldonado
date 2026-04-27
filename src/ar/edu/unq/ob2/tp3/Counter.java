@@ -9,6 +9,7 @@ public class Counter {
 	
 	public void addNumber(Integer aNumber) {
 		numbers.add(aNumber);
+		
 	}
 	
 	public int getEvenOcurrences() {
@@ -31,4 +32,40 @@ public class Counter {
 	public Boolean isEven(Integer aNumber) {
 		return !this.isOdd(aNumber);
 	}
+	
+	public int cantidadDeMultiplos(int unNumero) {
+
+		return (int) numbers.stream().filter(otroNumero -> this.isMultiple(unNumero,otroNumero)).count();
+	}
+
+	public boolean isMultiple(int unNumero, int otroNumero) {
+		return unNumero % otroNumero == 0;
+	}
+	
+	public int cantidadDigitosPares(int unNumero) {
+		
+		int cantPares=0;
+		int numero = unNumero;
+		int digito;
+		
+		while(numero > 0){
+			digito = numero % 10;
+			
+			if (this.isEven(digito)) {
+				cantPares += 1;
+			}
+			
+			numero = numero / 10;
+		}
+		
+		return cantPares;
+		
+	}
+	//public Integer desarmadorDeNumeros(unNumero) {
+		//unNumero % 10
+	//}
+
 }
+
+
+
