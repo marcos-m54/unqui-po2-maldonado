@@ -15,7 +15,14 @@ class VideojuegoTest {
 	}
 	
 	@Test
-	void testCambiosDeEstado() {
+	void testCuandoNoTengoFichas() {
+		
+		assertEquals("prendiendo", videojuego.iniciar());
+		assertEquals("ingresa una o mas fichas", videojuego.iniciar());
+	}
+
+	@Test
+	void testCuandoTengoFichas() {
 		
 		assertEquals("prendiendo", videojuego.iniciar());
 		assertEquals("ingresa una o mas fichas", videojuego.iniciar());

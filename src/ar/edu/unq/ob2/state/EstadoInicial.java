@@ -19,7 +19,11 @@ public class EstadoInicial implements Estado {
 		if (videojuego.getFichas() == 0) {
 			return "ingresa una o mas fichas";
 			
-		}else {
+		}
+		
+		else 
+		
+		{
 			
 			videojuego.setEstado(new Jugando(videojuego));
 			
